@@ -11,20 +11,22 @@
       padding: 40px;
     }
     .container {
-      max-width: 600px;
+      max-width: 800px;
       margin: auto;
       background: white;
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
+    h1, h2, h3 {
+      margin-top: 30px;
     }
-    p {
+    p, li {
       font-size: 18px;
       line-height: 1.6;
+    }
+    ul {
+      margin-left: 20px;
     }
     a {
       color: #0070f3;
@@ -35,11 +37,72 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>TaskTimeline Support</h1>
     <p>If you need help with the TaskTimeline app, we’re here for you.</p>
     <p><strong>Email:</strong> <a href="mailto:mstone2112@gmail.com">mstone2112@gmail.com</a></p>
+
+    <h2>Task Timeline User Guide</h2>
+    <p>Thank you for your interest in Task Timeline! I hope you find this app useful. I’ve tried to make the design as straightforward as possible.</p>
+
+    <h2>The Four Tabs</h2>
+
+    <h3>Timeline</h3>
+    <p>This is the main viewing page intended to give you a look at all of your projects and tasks at a glance. On this page you can:</p>
+    <ul>
+      <li>Add a new task</li>
+      <li>Select the desired grouping:
+        <ul>
+          <li>Project</li>
+          <li>Owner</li>
+          <li>Category</li>
+          <li>Status</li>
+          <li>Priority</li>
+        </ul>
+      </li>
+      <li>Use the arrow next to the Group By button to reverse the sort direction</li>
+      <li>Select the desired sort criteria within each group:
+        <ul>
+          <li>Date</li>
+          <li>Status</li>
+          <li>Priority</li>
+        </ul>
+      </li>
+      <li>Adjust the zoom level of the timeline:
+        <ul>
+          <li>Use preset sizes (Fit, Quarter, Detailed)</li>
+          <li>Use pinch gesture on an empty area to expand or contract</li>
+        </ul>
+      </li>
+      <li>Adjust task timing:
+        <ul>
+          <li>Long press to activate the move icon and date handles</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Task</h3>
+    <p>Inline editing of task information can be done on this screen for quick, clear edits.</p>
+    <ul>
+      <li>Create new categories, projects, owners, etc. by selecting the field in an existing task</li>
+      <li>Handle deletions inline (tasks or specific attributes)</li>
+    </ul>
+
+    <h3>Calendar</h3>
+    <p>See how your tasks stack up on a daily basis on a scrollable calendar that covers the entire scope of your existing plan.</p>
+
+    <h3>Settings</h3>
+    <ul>
+      <li>Select from an extensive color palette to change background elements</li>
+      <li>Set default grouping, zoom level, and sort criteria for the timeline</li>
+    </ul>
+
+    <h2>Design Philosophy</h2>
+    <p>The idea is to keep fundamental personal task tracking as simple and straightforward as possible without overloading the interface with features. I have purposely not added task connections or Gantt functionality to this release. If there is significant interest, I can plan it for future updates.</p>
+
   </div>
 </body>
 </html>
+
