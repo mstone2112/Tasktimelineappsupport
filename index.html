@@ -144,65 +144,74 @@
   Email: mstone2112@gmail.com</p>
 ---
 
-LogConsole Support
-If you need help with the LogConsole app, we're here for you.
+<hr style="margin: 50px 0;">
 
-Email: mstone2112@gmail.com
+<section id="logconsole-support" style="margin-top: 40px;">
+  <h1>LogConsole Support</h1>
+  <p>If you need help with the LogConsole app, we're here for you.</p>
+  <p><strong>Email:</strong> <a href="mailto:mstone2112@gmail.com">mstone2112@gmail.com</a></p>
 
-LogConsole User Guide
-Thank you for your interest in LogConsole! It's built to let you check on your own apps' logs and crashes from any of your devices, without needing to plug into Xcode.
+  <h2>LogConsole User Guide</h2>
+  <p>Thank you for your interest in LogConsole! It's built to let you check on your own apps' logs and crashes from any of your devices, without needing to plug into Xcode.</p>
 
-Sessions
-This is the main screen, showing every session captured from an app using the LogConsoleKit SDK. On this page you can:
+  <h3>Sessions</h3>
+  <p>This is the main screen, showing every session captured from an app using the LogConsoleKit SDK. On this page you can:</p>
+  <ul>
+    <li>See which app and device each session came from, and when it happened</li>
+    <li>See an entry count for each session</li>
+    <li>Spot crashed sessions immediately via the red "Crash" indicator</li>
+  </ul>
 
-See which app and device each session came from, and when it happened
-See an entry count for each session
-Spot crashed sessions immediately via the red "Crash" indicator
-Session Detail
-Tap any session to see its full log stream. On this screen you can:
+  <h3>Session Detail</h3>
+  <p>Tap any session to see its full log stream. On this screen you can:</p>
+  <ul>
+    <li>Filter log entries by tag</li>
+    <li>See a crash banner with the failure reason, if that session crashed</li>
+    <li>Export the session's logs and crash details to share or save elsewhere</li>
+  </ul>
 
-Filter log entries by tag
-See a crash banner with the failure reason, if that session crashed
-Export the session's logs and crash details to share or save elsewhere
-Sync
-Sessions sync automatically across your iPhone, iPad, and Mac through your own private iCloud account — open LogConsole on any of your signed-in devices and your full history is there.
+  <h3>Sync</h3>
+  <p>Sessions sync automatically across your iPhone, iPad, and Mac through your own private iCloud account — open LogConsole on any of your signed-in devices and your full history is there.</p>
 
-Design Philosophy
-LogConsole is built for solo and small-team iOS developers who want to check a TestFlight build's behavior without staying tethered to a cable. The architecture is deliberately simple: no server, no third-party backend, just your own iCloud account doing the syncing. That's a privacy choice as much as a technical one.
+  <h2>Design Philosophy</h2>
+  <p>LogConsole is built for solo and small-team iOS developers who want to check a TestFlight build's behavior without staying tethered to a cable. The architecture is deliberately simple: no server, no third-party backend, just your own iCloud account doing the syncing. That's a privacy choice as much as a technical one.</p>
+</section>
 
-Privacy Policy
-Last Updated: 2026
+<section id="privacy-policy-logconsole" style="margin-top: 40px;">
+  <h2>Privacy Policy</h2>
+  <p><strong>Last Updated: 2026</strong></p>
 
-LogConsole respects your privacy. This app does not collect, store, transmit, or share any personal data with the developer or any third party. All session, log, and crash data is stored and synced exclusively through your own private iCloud account.
+  <p>LogConsole respects your privacy. This app does not collect, store, transmit, or share any personal data with the developer or any third party. All session, log, and crash data is stored and synced exclusively through your own private iCloud account.</p>
 
-Information We Do Not Collect
-The developer of LogConsole does not collect or have access to any of the following:
+  <h3>Information We Do Not Collect</h3>
+  <p>The developer of LogConsole does not collect or have access to any of the following:</p>
+  <ul>
+    <li>Personal information (such as your name, email, phone number, or address)</li>
+    <li>The contents of your synced sessions, logs, or crash data</li>
+    <li>Usage data or analytics</li>
+    <li>Location data</li>
+    <li>Advertising identifiers</li>
+    <li>Cookies or tracking technologies</li>
+  </ul>
+  <p>The app does not use third-party analytics, advertising networks, or external data services.</p>
 
-Personal information (such as your name, email, phone number, or address)
-The contents of your synced sessions, logs, or crash data
-Usage data or analytics
-Location data
-Advertising identifiers
-Cookies or tracking technologies
-The app does not use third-party analytics, advertising networks, or external data services.
+  <h3>Data Storage and Sync</h3>
+  <p>All session, log, and crash data captured by apps using LogConsoleKit is stored in, and synced exclusively through, your own private CloudKit database tied to your iCloud account. This data is never transmitted to the developer or to any server operated by the developer. Apple's standard iCloud account security governs access to it, the same as any other app that stores data in your iCloud account.</p>
 
-Data Storage and Sync
-All session, log, and crash data captured by apps using LogConsoleKit is stored in, and synced exclusively through, your own private CloudKit database tied to your iCloud account. This data is never transmitted to the developer or to any server operated by the developer. Apple's standard iCloud account security governs access to it, the same as any other app that stores data in your iCloud account.
+  <h3>The LogConsoleKit SDK</h3>
+  <p>LogConsoleKit is the free, open-source companion SDK that other developers embed in their own apps to capture logs and crash details. Log message content is determined entirely by the developer of the app you're debugging — LogConsole and its developer never see or have access to this data; it flows only through your own iCloud account, the same as data created directly inside the LogConsole app itself.</p>
 
-The LogConsoleKit SDK
-LogConsoleKit is the free, open-source companion SDK that other developers embed in their own apps to capture logs and crash details. Log message content is determined entirely by the developer of the app you're debugging — LogConsole and its developer never see or have access to this data; it flows only through your own iCloud account, the same as data created directly inside the LogConsole app itself.
+  <h3>Third-Party Services</h3>
+  <p>LogConsole does not integrate with or send data to any third-party services. CloudKit sync is provided directly by Apple as part of your iCloud account, not by a third party engaged by the developer.</p>
 
-Third-Party Services
-LogConsole does not integrate with or send data to any third-party services. CloudKit sync is provided directly by Apple as part of your iCloud account, not by a third party engaged by the developer.
+  <h3>Children's Privacy</h3>
+  <p>Because the developer does not collect any personal data, LogConsole is safe for users of all ages. No personal information is knowingly collected from children.</p>
 
-Children's Privacy
-Because the developer does not collect any personal data, LogConsole is safe for users of all ages. No personal information is knowingly collected from children.
+  <h3>Changes to This Policy</h3>
+  <p>If the app's functionality changes in the future in a way that affects data handling, this Privacy Policy will be updated accordingly. Any changes will be posted on this page.</p>
 
-Changes to This Policy
-If the app's functionality changes in the future in a way that affects data handling, this Privacy Policy will be updated accordingly. Any changes will be posted on this page.
-
-Contact
-If you have any questions about this Privacy Policy, you may contact:
-
-Michael Stone
-Email: mstone2112@gmail.com
+  <h3>Contact</h3>
+  <p>If you have any questions about this Privacy Policy, you may contact:</p>
+  <p><strong>Michael Stone</strong><br>
+  Email: mstone2112@gmail.com</p>
+</section>
