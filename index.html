@@ -217,3 +217,140 @@
   <p><strong>Michael Stone</strong><br>
   Email: mstone2112@gmail.com</p>
 </section>
+
+  <hr style="margin: 50px 0;">
+
+<section id="logconsolekit-readme" style="margin-top: 40px;">
+  <h1>LogConsoleKit — SDK Integration Guide</h1>
+  <p>The capture SDK and crash-capture mechanism behind LogConsole, with CloudKit sync. This gets you to: your app's logs and crashes flowing into your own private CloudKit database, verifiable via Apple's own developer dashboard. It does not include a viewer app UI itself — that lives in the separate LogConsole app, not in this package.</p>
+  <p>Follow this guide in order. Every step exists because skipping it caused a specific, confirmed failure during real integration — they're listed here so you don't have to rediscover them. The full source is on GitHub: <a href="https://github.com/mstone2112/LogConsoleKit">github.com/mstone2112/LogConsoleKit</a></p>
+
+  <h2>What's in this package</h2>
+  <ul>
+    <li><code>LogEntry</code>, <code>Session</code>, <code>CrashRecord</code> — SwiftData models, written so they're valid for CloudKit mirroring (every stored property has a default, every relationship is declared on both sides with a matching inverse). A relationship declared on only one side builds and passes in-memory tests fine, but crashes at runtime the moment CloudKit is involved.</li>
+    <li><code>LogConsoleContainer</code> — builds the shared <code>ModelContainer</code> pointed at a CloudKit private database. Both the host app and the viewer app call this with the same container ID.</li>
+    <li><code>LogConsole</code> — the capture API. Only the HOST app (the app being debugged) calls this. Save failures print to the console rather than failing silently.</li>
+  </ul>
+
+  <h2>Prerequisites — check these before opening Xcode</h2>
+  <ol>
+    <li><strong>A paid Apple Developer Program membership</strong> ($99/year), not just a free Apple ID. CloudKit specifically requires this to provision.</li>
+    <li><strong>No pending agreement blocking your account.</strong> Sign in at <a href="https://appstoreconnect.apple.com">appstoreconnect.apple.com</a> and check for a banner asking you to accept an updated Program License Agreement. If one exists and you skip it, Xcode will fail to refresh your provisioning profile and report confusing, unrelated-looking capability errors.</li>
+    <li><strong>Your test device(s) are signed into iCloud.</strong> Settings → top of the screen should show your name, not "Sign in to your iPhone/iPad."</li>
+  </ol>
+
+  <h2>Required end state — two folders, side by side</h2>
+  <pre><code>~/Developer/LogConsole/
+  LogConsoleKit/          ← this package. Package.swift sits directly inside.
+  LogConsoleApp/          ← the Xcode project you create in step 2 below.</code></pre>
+  <p>The single most common mistake here is creating the new Xcode project and saving it <em>inside</em> the <code>LogConsoleKit</code> folder, so it becomes a child of the package instead of a sibling next to it:</p>
+  <pre><code>NOT THIS:
+~/Developer/LogConsole/
+  LogConsoleKit/
+    LogConsoleApp/        ← wrong — nested inside the package
+    Package.swift</code></pre>
+  <p>If you do this, Xcode's "Add Local Package" file picker will often default into that nested app folder, and since it has no <code>Package.swift</code> in it, you'll get "Cannot select this directory... contains a valid Package.swift file" — the package is fine, you're just pointed at the wrong folder.</p>
+
+  <h2>Step 1 — place this package</h2>
+  <p>Unzip or clone this package to <code>~/Developer/LogConsole/LogConsoleKit/</code>. Confirm in Finder: opening that folder should show <code>Package.swift</code> directly inside it, not inside another folder.</p>
+
+  <h2>Step 2 — create the app project</h2>
+  <p>In Xcode: <strong>File → New → Project…</strong>. In the platform-category list on the left of that dialog, select <strong>Multiplatform</strong> — not "iOS" and not "macOS" individually; those tabs only offer single-platform templates. Under Multiplatform, choose <strong>App</strong>.</p>
+  <p>If your Xcode version doesn't show a Multiplatform option at all: create it as a plain iOS app instead, then add Mac afterward — select the project → select the target → <strong>General</strong> tab → find <strong>Supported Destinations</strong> → click <strong>+</strong> → add <strong>Mac</strong>.</p>
+  <p>Product Name: <code>LogConsoleApp</code>. Don't use spaces, and don't use anything close to "LogConsoleKit" — a name that's almost-but-not-quite the same as the package is exactly what causes folders to get dragged into the wrong place.</p>
+  <p><strong>Uncheck "Use Core Data"</strong> if the dialog offers it. The template's Core Data boilerplate is unrelated to this package, which uses SwiftData instead, and it generates console noise once the app actually runs.</p>
+  <p>When Xcode asks where to save, navigate to <code>~/Developer/LogConsole/</code> itself — not into the <code>LogConsoleKit</code> folder — then save.</p>
+
+  <h2>Step 3 — add the package dependency</h2>
+  <p>Select the project file in the navigator → select the <code>LogConsoleApp</code> target → the <strong>General</strong> tab → scroll to <strong>Frameworks, Libraries, and Embedded Content</strong> → click <strong>+</strong> → <strong>Add Other…</strong> → <strong>Add Package Dependency…</strong> → click <strong>Add Local…</strong> → navigate to the <code>LogConsoleKit</code> folder.</p>
+  <p>A dialog titled "Choose Package Products for LogConsoleKit" will appear, showing "Add to Target" set to <strong>None</strong> — click that dropdown and select your <code>LogConsoleApp</code> target, then click <strong>Add Package</strong>.</p>
+
+  <h2>Step 4 — enable CloudKit</h2>
+  <p>Same target → <strong>Signing &amp; Capabilities</strong> tab. (If you ended up with two separate iOS/macOS targets, repeat below for both.)</p>
+  <ul>
+    <li>Check the <strong>Team</strong> dropdown — needs your paid developer account selected.</li>
+    <li>Click <strong>+ Capability</strong> → add <strong>iCloud</strong> → check <strong>CloudKit</strong> → under <strong>Containers</strong>, click <strong>+</strong> and create a container, e.g. <code>iCloud.com.yourname.logconsole</code>.</li>
+    <li>Click <strong>+ Capability</strong> again → add <strong>Background Modes</strong> → check <strong>Remote notifications</strong>.</li>
+  </ul>
+  <p><strong>Write down the exact container ID string you just created.</strong> A placeholder or mistyped container ID is the single most common cause of a "BadContainer" error, and it won't show up until runtime.</p>
+
+  <h2>Step 5 — smoke test</h2>
+  <p>In <code>LogConsoleAppApp.swift</code>, add the import and an <code>init()</code>:</p>
+  <pre><code>import SwiftUI
+import LogConsoleKit
+
+@main
+struct LogConsoleAppApp: App {
+    init() {
+        LogConsole.shared.start(containerID: "iCloud.com.yourname.logconsole", appVersion: "1.0")
+    }
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}</code></pre>
+  <p>Replace the placeholder container ID with your exact string, copy-pasted rather than retyped.</p>
+  <p><strong>Run on a Simulator first</strong>, not a physical device — physical-device runs can fail for unrelated reasons (e.g. a "developer disk image" pairing issue), and confirming on a Simulator first tells you whether a later device issue is hardware-related or not.</p>
+
+  <h2>Step 6 — verify it actually synced</h2>
+  <ol>
+    <li>Go to <a href="https://icloud.developer.apple.com/dashboard/">icloud.developer.apple.com/dashboard</a>, sign in with the same Apple ID, and select your container — it may default to a different one from a previous project.</li>
+    <li>Switch the database dropdown from <strong>Public Database</strong> to <strong>Private Database</strong>.</li>
+    <li>Click <strong>Record Type</strong>. You should see <code>CD_Session</code> and <code>CD_LogEntry</code> alongside the default <code>Users</code> entry.</li>
+    <li>Select <code>CD_Session</code>, then click <strong>Query Records</strong>.</li>
+  </ol>
+  <p>If this returns "Field 'recordName' is not marked queryable," that's a dashboard quirk, not a sync failure — click <strong>Add filter or sort to query</strong>, add a sort on the system field <strong>Modified</strong>, and query again.</p>
+
+  <h2>Phase 2 — crash capture</h2>
+  <p><code>LogConsole.shared.start()</code> also arms crash capture automatically. A fatal signal or uncaught exception writes a small file using only low-level system calls, and the next call to <code>start()</code> attaches it as a <code>CrashRecord</code> on whichever session was active when it happened.</p>
+  <p>To verify: run once normally, add a deliberate <code>fatalError("manual crash test")</code> and run again (it should crash), remove that line, then launch a third time from the device's home screen directly (not through Xcode's debugger, which intercepts the crash before the handler runs). Watch the console for a line starting with <code>LogConsole attached a crash from the previous launch</code>.</p>
+
+  <h2>Troubleshooting — noise vs. real problems</h2>
+  <p>These appear in the Xcode console and are <strong>expected, not bugs</strong>:</p>
+  <ul>
+    <li><code>BGSystemTaskSchedulerErrorDomain Code=3</code> and "updateTaskRequest called for an already running/updated task" — a known, Apple-acknowledged scheduling-contention message. It retries automatically.</li>
+    <li>"Failed to send CA Event for app launch measurements" — unrelated Apple analytics telemetry.</li>
+    <li>"Context in environment is not connected to a persistent store coordinator" — only appears if Core Data template boilerplate was kept instead of skipped in Step 2.</li>
+  </ul>
+  <p>These are real and need the listed fix:</p>
+  <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%;">
+    <tr>
+      <th>Message contains</th>
+      <th>Cause</th>
+      <th>Fix</th>
+    </tr>
+    <tr>
+      <td>"Couldn't get container configuration... BadContainer"</td>
+      <td>Container ID in code doesn't match a real container</td>
+      <td>Use the exact string from Step 4, copy-pasted</td>
+    </tr>
+    <tr>
+      <td>"relationships have an inverse"</td>
+      <td>A SwiftData relationship declared on only one model</td>
+      <td>Already fixed in this package's shipped models</td>
+    </tr>
+    <tr>
+      <td>"doesn't include the iCloud capability"</td>
+      <td>Stale provisioning profile, often from a pending agreement</td>
+      <td>Accept any pending agreement, then refresh profiles in Xcode → Settings → Accounts</td>
+    </tr>
+    <tr>
+      <td>"Cannot select this directory... valid Package.swift"</td>
+      <td>Pointed at the wrong folder in Add Local Package</td>
+      <td>Confirm the folder shown contains <code>Package.swift</code> directly</td>
+    </tr>
+    <tr>
+      <td>"A C function pointer can only be formed..."</td>
+      <td>A signal/exception handler written as a method or closure inside a type</td>
+      <td>Already fixed — both handlers are top-level functions in this package</td>
+    </tr>
+  </table>
+
+  <h2>License</h2>
+  <p>MIT — see the <code>LICENSE</code> file in the repository. Use this in your own apps, fork it, modify it, ship it.</p>
+
+  <h2>Running the included tests</h2>
+  <p>These run against an in-memory store, no CloudKit or network involved: <strong>Product → Test</strong> (⌘U) in Xcode, or <code>swift test</code> from the <code>LogConsoleKit</code> folder in Terminal. Note that these tests cannot catch CloudKit-specific schema issues like the missing-inverse-relationship bug described above — treat passing tests as confirmation of the capture logic, not of CloudKit compatibility.</p>
+</section>
