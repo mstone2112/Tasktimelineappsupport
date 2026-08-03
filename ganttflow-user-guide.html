@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Timeline Gantt — User Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      margin-top: 30px;
+    }
+    p, li {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 12px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px 14px;
+      font-size: 17px;
+      text-align: left;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    hr {
+      margin: 50px 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .note {
+      background: #eef6ff;
+      border-left: 4px solid #0070f3;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-top: 20px;
+    }
+    .note p {
+      font-size: 17px;
+      margin: 0 0 12px 0;
+    }
+    .note p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <a class="back-link" href="ganttflow-support.html">← Back to Support</a>
+    <h1>Task Timeline Gantt — User Guide</h1>
+
+    <div class="note">
+      <p><strong>Thank you for purchasing the app and I hope it is just what you are looking for. If you find it lacking in any respects, please don't hesitate to reach out as I am a strong believer in continuous improvement.</strong></p>
+      <p>When the app was first placed on the App Store, I placed it there complete with sample tasks but later decided most users would prefer a clean slate. If you do have the tasks in your version, the quickest way to remove them is to go to the <strong>"+ Task"</strong> (Quick Add) area and simply tap the trash can icons for each task. The same approach will work for unwanted categories/projects, etc. in the Manage area.</p>
+    </div>
+
+    <h2>What this app does</h2>
+    <p>Task Timeline Gantt is a project planning app built around one shared set of tasks that you can view three different ways: as a Gantt timeline, as a Kanban board, or as a calendar. Every task, dependency, project, category, and owner you create is the same underlying data no matter which view you're looking at — move a task's dates on the Timeline and it shows up in its new spot on the Calendar; drag a card to a new column on the Kanban board and its progress updates on the Timeline too. The app runs on iPhone, iPad, Mac, and Android, and your data syncs automatically across your own devices.</p>
+    <p>This guide walks through every screen and control, starting with Quick Add — the fastest way to lay out a new schedule — and then moving through the three main views, the task and dependency editors, the Manage panel, and Export.</p>
+
+    <h2>Getting your data syncing</h2>
+    <p>Before you dive in, it's worth understanding how your data gets from one device to another, since it works a little differently by platform.</p>
+    <p><strong>On iPhone, iPad, and Mac</strong>, syncing uses your iCloud account automatically — there's nothing to sign into inside the app itself. The app checks whether you're signed into iCloud on that device; if you're not, you'll see a banner telling you to sign in under the device's Settings app to enable sync. Once you're signed in, changes you make on one Apple device will appear on your others within moments.</p>
+    <p><strong>On Android</strong>, there's no iCloud, so the app uses your Google account instead. The first time you open the app, you'll be asked to sign in with Google — tap "Continue with Google" and follow the prompts. From then on your data syncs to your Google account and will appear on any other Android device where you sign in the same way.</p>
+    <p>A small sync status indicator sits in the app's top toolbar so you can see at a glance whether your data is up to date.</p>
+
+    <h2>Quick Add — the best place to start building your schedule</h2>
+    <p>The <strong>+ Task</strong> button in the top toolbar opens Quick Add, and it's the screen you should reach for first when you're setting up a new plan or adding a batch of tasks. Rather than opening a full editor for every single task, Quick Add gives you a plain, fast list where you can type task names one after another, nest them into a hierarchy, reorder them, and link them — all without leaving the screen.</p>
+    <p><strong>Adding tasks.</strong> Type a name into the text field at the bottom of the screen and press Return (or tap the field's return key on a touch keyboard). The task is added to the bottom of the list, and a new blank row opens immediately below it so you can keep typing the next task right away. New tasks default to today's date, the first project and category in your lists, and Medium priority — you can refine any of these later in the full task editor.</p>
+    <p><strong>Building a hierarchy as you type.</strong> Before you finish typing a task's name, you can press Tab to indent it one level (making it a subtask of the task above it) or Shift+Tab to outdent it back out. This only works with a hardware keyboard attached, which is reliable on a Mac or an iPad with a keyboard case; on a touch keyboard, use the ← and → arrow buttons described below instead, once the task has already been added.</p>
+    <p><strong>Editing an existing task's name.</strong> Tap directly on a task's name to turn it into an editable text field. Press Return to save the change and immediately open a new blank row below it, so you can keep adding tasks from that point in the list; tapping away or pressing Escape saves your edit without opening a new row.</p>
+    <p><strong>Inserting a task in the middle of the list.</strong> Tap the small <strong>＋</strong> that appears in the gap between any two rows to open a new blank row right at that spot, rather than only ever at the bottom of the list.</p>
+    <p><strong>Reordering tasks.</strong> Press and hold the ☰ handle on the left edge of a row, then drag it up or down to move that task to a new position in the list. A horizontal line shows you exactly where it will land, and the list scrolls automatically if you drag near the top or bottom of the screen.</p>
+    <p><strong>Indenting and outdenting.</strong> Each row has ← (outdent) and → (indent) buttons. Indenting a task nests it under the task directly above it at the same level, turning that task into what this guide calls a <em>summary task</em> — see the note on summary tasks in the Timeline section below. Outdenting promotes a task back up one level. A button is grayed out when that action isn't available (for example, the very first task in a list can't be indented, since there's nothing above it to nest under).</p>
+    <p><strong>Linking two tasks (creating a dependency).</strong> If drag-to-link is turned on (see Manage panel, below), each row also shows a small 🔗 chip. Press and hold it, then drag onto another row and let go — this opens the dependency editor with those two tasks already filled in, ready for you to choose the dependency type and save. Summary tasks don't get a link chip, since a summary task's schedule is calculated from its subtasks rather than set directly.</p>
+    <p><strong>Opening the full editor.</strong> Tap the <strong>›</strong> button on any row to jump into the full task editor (described later in this guide), where you can set exact dates, assign owners, set priority, and more.</p>
+    <p><strong>Deleting a task.</strong> Tap the 🗑 button on a row to delete that task immediately. If the task has subtasks nested under it, they're promoted up one level rather than deleted along with it.</p>
+    <p><strong>Closing Quick Add.</strong> Tap the <strong>✕</strong> in the top-left corner to close the screen and return to whichever main view you were on.</p>
+
+    <h2>The Timeline (Gantt chart)</h2>
+    <p>The Timeline tab is the main view of the app — a horizontal bar chart where each task is drawn as a bar spanning its start and end dates, grouped and sorted however you like, with dependency arrows connecting related tasks.</p>
+    <p><strong>Grouping and sorting.</strong> At the top of the Timeline, the <strong>Group</strong> row lets you organize the chart by Project, Category, Priority, Status, Owner, or None. Choosing Owner will show a task more than once if it has more than one person assigned to it, once under each owner. The <strong>Sort</strong> row controls the order tasks appear in within each group — by Name, Start date, or Progress — and the arrow button at the right end of that row flips between ascending and descending order. Group headers can be reordered too: each header has small ↑ and ↓ arrows that move that whole group earlier or later in the chart, and tapping a header's ▾/▸ arrow collapses or expands the tasks inside it.</p>
+    <p><strong>Reading a task bar.</strong> A task's name is written on its bar, and the portion of the bar that's filled in shows how much of the task is complete. The color of the bar comes from the task's category. A task whose start and end date are the same is drawn instead as a small diamond — this is a <em>milestone</em>, representing a single point in time (like a deadline or review date) rather than a span of work, so it has no duration to resize.</p>
+    <p><strong>Moving and resizing a task.</strong> Press and drag the middle of a bar to shift its entire date range earlier or later. Drag the left or right edge of a bar to change its start or end date independently, shortening or lengthening the task. A milestone diamond can only be dragged to a new date, since it has no edges to resize.</p>
+    <p><strong>Selecting a task for quick actions.</strong> A normal tap on a task's row opens the full task editor. A long-press on a row instead selects just that row and swaps its owner avatars for three inline buttons: ← Outdent, → Indent, and 🗑 Delete — the same actions available in Quick Add, but reachable directly from the Timeline without opening another screen. Tap anywhere else to deselect.</p>
+    <p><strong>Creating a dependency by dragging.</strong> If drag-to-link is turned on, press and hold on a task bar (without moving) for about three quarters of a second. A small 🔗 badge appears on the bar to confirm the link-drag has started; drag from there onto another task's bar and let go to open the dependency editor with both tasks filled in. If you start moving the bar right away instead of holding still, it's treated as a normal move, not a link.</p>
+    <p><strong>Dependency arrows.</strong> Lines connecting two task bars show a dependency between them — see "Editing a dependency," below, for what the different arrow shapes mean. Tap an arrow to open that dependency for editing.</p>
+    <p><strong>Summary tasks.</strong> Any task with subtasks nested under it becomes a summary task automatically. Its bar is drawn differently from a normal task — either as a thin bracket spanning the date range of its subtasks, or as an outlined bar with a fill showing the combined percent complete across all its subtasks, depending on which style you've chosen in the Manage panel. A summary task's dates and progress are calculated from its subtasks and can't be set directly, and it can't be a dependency's source or destination, since it isn't an independently schedulable task itself.</p>
+    <p><strong>Resizing the sidebar.</strong> The task list on the left and the chart on the right share one scrolling area, so they always stay lined up as you scroll. Drag the thin handle between them to make the name column wider or narrower.</p>
+    <p><strong>Zooming.</strong> The <strong>－</strong> and <strong>＋ Zoom</strong> buttons in the top toolbar zoom the Timeline out or in, widening or narrowing how much space each day takes up on the chart.</p>
+    <p><strong>Today.</strong> A dashed vertical line labeled TODAY marks the current date on the chart, so you can see at a glance what's already behind and what's still ahead.</p>
+
+    <h2>The Kanban board</h2>
+    <p>The Kanban tab shows your tasks as cards sorted into three columns — To Do, In Progress, and Done — based on how complete each task is: 0% sits in To Do, 100% sits in Done, and anything in between sits in In Progress. Summary tasks don't appear here, since Kanban tracks the status of individual, directly-schedulable tasks.</p>
+    <p>Tap a card to open it in the full task editor. Press and hold a card for about a quarter of a second, then drag it into a different column to update its progress — dropping a card in To Do sets it to 0%, dropping it in Done sets it to 100%, and dropping it in In Progress sets it to a partial value if it wasn't already partially complete. Each card shows the task's name, dates, priority, and assigned owners, plus a small progress bar along the bottom.</p>
+
+    <h2>The Calendar</h2>
+    <p>The Calendar tab lays your tasks out across a traditional month grid, with each task appearing as a small colored chip on every day it spans. As with Kanban, summary tasks are left out, since their dates are calculated from their subtasks rather than scheduled directly. Tap any chip to open that task in the full editor.</p>
+    <p>Use the <strong>－</strong> and <strong>＋ Zoom</strong> buttons in the top toolbar to change the height of each week row; taller rows show more task chips per day before switching to a "+N more" overflow label, and at the tallest zoom level, chip text wraps onto multiple lines instead of being cut off.</p>
+
+    <h2>Editing a task (the full task editor)</h2>
+    <p>Tapping a task anywhere in the app — its Timeline bar, Kanban card, Calendar chip, or the <strong>›</strong> button in Quick Add — opens the full task editor as a sheet that slides up from the bottom of the screen. This is where every detail of a task lives.</p>
+    <p><strong>Task name.</strong> A plain text field at the top.</p>
+    <p><strong>Hierarchy.</strong> If the task already exists, Outdent and Indent buttons here let you move it up or down a nesting level, the same as the arrows in Quick Add and on the Timeline. If it's nested under another task, that parent's name is shown just above these buttons.</p>
+    <p><strong>Dates and duration.</strong> For a normal task, tap the Start or End date to open a small calendar picker below it and choose a new date. Underneath the dates, the Duration control shows how long the task spans, editable directly as a number with a unit of Days, Weeks, or Months — use the – and + steppers, or type a number directly. Editing the Start date keeps the task's duration the same and shifts the End date along with it; editing the End date or the duration only moves the End date, leaving Start where it is. For a summary task, this whole section is replaced with a short readout of its calculated date range and percent complete, since those values come from its subtasks rather than being set here.</p>
+    <p><strong>Project and Category.</strong> Horizontally scrolling rows of colored chips — tap one to assign the task to that project or category. (See "Managing projects, categories, and owners," below, for how to add new ones.)</p>
+    <p><strong>Priority.</strong> Three buttons — Low, Medium, High — each shown with its own flag icon and color.</p>
+    <p><strong>Assign to.</strong> A grid of your owners; tap one or more to assign them to the task. Assigned owners are highlighted and their initials appear on the task's bar, card, or chip elsewhere in the app.</p>
+    <p><strong>Progress.</strong> For a non-summary task, a row of preset percentages (0, 10, 25, 50, 75, 90, 100) lets you set how complete the task is. This control is hidden for summary tasks, since their progress is calculated automatically from their subtasks.</p>
+    <p><strong>Saving, canceling, and deleting.</strong> Cancel discards your changes and closes the sheet; Save applies them. If you're editing an existing task, a Delete button appears at the bottom — deleting a task with subtasks promotes those subtasks up one level rather than deleting them, and the sheet tells you how many subtasks will be affected before you do it.</p>
+
+    <h2>Editing a dependency</h2>
+    <p>Dependencies (also called links) express that one task's schedule depends on another's. You can open the dependency editor by tapping <strong>+ Link</strong> in the top toolbar (to create a new one from scratch), by tapping an existing dependency arrow on the Timeline, or by dragging one task onto another with drag-to-link, which opens this same sheet already filled in.</p>
+    <p><strong>From and To.</strong> Two pickers — "From (predecessor)" and "To (dependent)" — choose which two tasks are connected. Summary tasks don't appear in either list, since they aren't independently schedulable.</p>
+    <p><strong>Type.</strong> Three options describe how the two tasks relate:</p>
+    <ul>
+      <li><strong>Finish → Start (FS)</strong> — the dependent task can't start until the predecessor finishes. This is the most common type.</li>
+      <li><strong>Start → Start (SS)</strong> — the dependent task can't start until the predecessor starts; the two tasks may overlap.</li>
+      <li><strong>Finish → Finish (FF)</strong> — the dependent task can't finish until the predecessor finishes.</li>
+    </ul>
+    <p>A short description of whichever type is selected appears just below the buttons as a reminder.</p>
+    <p><strong>Lag.</strong> An optional number of days to delay the dependency by — for example, a Finish → Start link with a 2-day lag means the dependent task starts two days after the predecessor finishes, rather than immediately.</p>
+    <p><strong>Saving and errors.</strong> If you try to save a link with no From or To selected, connect a task to itself, or create a duplicate of a dependency that already exists between the same two tasks, the sheet shows a message explaining what to fix rather than silently failing to save.</p>
+    <p><strong>Removing a dependency.</strong> When editing an existing link, a "Remove dependency" button at the bottom deletes it.</p>
+
+    <h2>Managing projects, categories, and owners</h2>
+    <p>The <strong>⚙ Manage</strong> button in the top toolbar opens a panel for maintaining the lists that tasks draw from, plus a couple of app-wide appearance settings.</p>
+    <p><strong>Appearance — Summary task bar.</strong> Choose whether summary tasks are drawn on the Timeline with "Bracket ends" (a thin line with short end caps, in the style of classic project-planning software) or "Progress-fill" (an outlined bar with an inner fill showing the combined percent complete of all its subtasks). This is purely a visual preference — both show exactly the same underlying data.</p>
+    <p><strong>Appearance — Drag to link.</strong> A switch that turns the drag-to-link gesture on or off across the app. When it's on, you can create a dependency by pressing and holding a task bar on the Timeline (or the 🔗 chip in Quick Add) and dragging onto another task. Turning it off removes that gesture if you'd rather only create dependencies through <strong>+ Link</strong> or by tapping an arrow.</p>
+    <p><strong>Projects, Categories, and Owners.</strong> Each of these sections lists the existing entries with a colored swatch (or, for owners, an avatar with initials) beside each name. Tap <strong>＋ Add</strong> to reveal a text field, type a name, and tap Add (or press Return) to create a new entry — it's immediately available as a choice in the task editor. Tap the 🗑 button next to any entry to remove it.</p>
+    <p><strong>Priorities.</strong> A read-only list showing the three fixed priority levels (Low, Medium, High) and their flag icons — these aren't editable, since priority is a fixed part of the app.</p>
+    <p>Tap <strong>✕</strong> to close the panel and return to whatever you were doing.</p>
+
+    <h2>Exporting your plan</h2>
+    <p>The <strong>↑ Export</strong> button in the top toolbar opens a panel for saving your plan out of the app in one of four formats:</p>
+    <table>
+      <tr>
+        <th>Format</th>
+        <th>Best for</th>
+      </tr>
+      <tr>
+        <td><strong>PDF</strong></td>
+        <td>Printing or attaching to an email or document</td>
+      </tr>
+      <tr>
+        <td><strong>PNG image</strong></td>
+        <td>Pasting into a slide deck or email</td>
+      </tr>
+      <tr>
+        <td><strong>Excel</strong></td>
+        <td>Structured, editable task data</td>
+      </tr>
+      <tr>
+        <td><strong>Project XML</strong></td>
+        <td>Importing into other project-planning tools</td>
+      </tr>
+    </table>
+    <p>Choose a format, and for PDF or PNG, optionally check "Show today line" to include or omit the dashed TODAY marker in the exported chart. Tap the Export button at the bottom to generate the file. On iPhone and iPad, the finished file is handed to the system share sheet so you can save it, AirDrop it, or send it from there; on Mac, a native Save dialog lets you choose where to put it.</p>
+
+    <h2>The top toolbar, at a glance</h2>
+    <p>Across the very top of the app, a row of buttons is available no matter which of the three main views you're on:</p>
+    <ul>
+      <li><strong>－ / ＋ Zoom</strong> — zoom the current view out or in (the Timeline's day columns, or the Calendar's week-row height)</li>
+      <li><strong>⚙ Manage</strong> — open the Manage panel described above</li>
+      <li><strong>↑ Export</strong> — open the Export panel described above</li>
+      <li><strong>+ Link</strong> — open the dependency editor to create a new dependency from scratch</li>
+      <li><strong>+ Task</strong> — open Quick Add</li>
+      <li>The sync status indicator sits at the far end of this row, showing whether your data is fully synced</li>
+    </ul>
+    <p>Below the toolbar, three tabs — Timeline, Kanban, and Calendar — switch between the three main views described above.</p>
+
+    <hr>
+    <p><a class="back-link" href="ganttflow-support.html">← Back to Support</a></p>
+
+  </div>
+</body>
+</html>
