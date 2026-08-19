@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Strategy Trainer Support</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      margin-top: 30px;
+    }
+    p, li {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 12px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px 14px;
+      font-size: 17px;
+      text-align: left;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    hr {
+      margin: 50px 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+    .note {
+      background: #eef6ff;
+      border-left: 4px solid #0070f3;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-top: 20px;
+    }
+    .note p {
+      font-size: 17px;
+      margin: 0 0 12px 0;
+    }
+    .note p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- ==================== USER GUIDE ==================== -->
+
+    <h1>Chess Strategy Trainer Support</h1>
+    <p>If you need help with the Chess Strategy Trainer app, we're here for you.</p>
+    <p><strong>Email:</strong> <a href="mailto:mstone2112@gmail.com">mstone2112@gmail.com</a></p>
+
+    <h2>Chess Strategy Trainer — User Guide</h2>
+
+    <div class="note">
+      <p><strong>Thank you for playing, and I hope this becomes a genuinely useful training partner for your game.</strong> If anything here feels off or missing, please don't hesitate to reach out — I'm a strong believer in continuous improvement.</p>
+      <p>Before anything else, it's worth understanding the one idea the whole app is built around: this is not a chess tutor that narrates what already happened. It's built to think ahead with you — every recommendation you see is chosen by looking several moves into the future and comparing how the position would turn out, then explained in plain language so you understand the reasoning, not just the verdict.</p>
+    </div>
+
+    <h3>What this app does</h3>
+    <p>Chess Strategy Trainer is a chess app built around one central goal: helping you find and understand your best move right now, not grading the moves you already made. Everything in the right-hand Strategy Panel exists to answer one question — "given this exact position, what should I be trying to do?" — with real reasoning behind the answer, not a generic tip.</p>
+    <p>That distinction matters because it's easy to build a chess app that just narrates: "you moved your knight," "you captured a pawn," "that was a blunder." This app deliberately avoids that pattern. Instead, its suggestions are forward-looking — a ranked list of candidate moves, each with a plain-language reason it's worth considering, plus a running strategic read on the position (what's the biggest priority right now, and what's the broader plan worth pursuing over the next several moves). Commentary on a move you already played only ever shows up when it's useful context for what to do next — for instance, a warning that your last move left something exposed, so you know to address it — never as a standalone verdict with nothing to do about it.</p>
+    <p>You can use the app two ways: play through a full game against the built-in AI opponent, or use "Both Sides" mode to move both colors yourself and let the app coach both sides of the board — useful for studying a specific position, replaying a real game move by move, or simply exploring "what if" lines without an opponent forcing the pace.</p>
+
+    <h3>The board and the pieces</h3>
+    <p><strong>Making a move.</strong> Tap the piece you want to move, then tap the square you want to move it to. If you tap a square the selected piece can't legally reach, nothing happens — the app never lets you attempt an illegal move by accident. The square a piece just moved from and to stay highlighted so you can always see the last move made, even after looking away from the board.</p>
+    <p><strong>Check.</strong> When a king is in check, its square is highlighted so the danger is immediately visible on the board itself, not just described in text.</p>
+    <p><strong>Promotion.</strong> When a pawn move reaches the back rank and more than one promotion is actually legal, a small menu pops up so you choose which piece to promote to — Queen, Rook, Bishop, or Knight. If there's genuinely only one legal outcome, the app just makes the move without asking.</p>
+    <p><strong>Captured pieces.</strong> Above and below the board, a row shows each side's captured trophies — the opponent pieces that side has taken off the board. Whichever side currently holds a material lead also shows a small "+N" badge next to its row, so the balance of material is visible at a glance without having to count pieces yourself.</p>
+    <p><strong>Piece sets.</strong> Choose between four look-and-feel options in Settings: <strong>Set 1</strong> and <strong>Set 2</strong> (two different flat, full-color vector piece sets), <strong>3D</strong> (a realistic wooden piece set that can render on a flat board or a perspective 3D board), and <strong>Short Set</strong> (a second realistic set with the same flat-or-3D choice). Only the 3D and Short Set piece sets offer the 3D perspective board, since the flat vector sets are designed to be viewed straight-on.</p>
+    <p><strong>Board style.</strong> When you've selected a piece set that supports it (3D or Short Set), a second picker appears letting you choose <strong>Flat</strong> or <strong>Perspective (3D)</strong> — a tilted, angled view of the board that looks like you're sitting at the table across from it.</p>
+    <p><strong>Board orientation.</strong> Flip which color sits at the bottom of the board — <strong>White at bottom</strong> or <strong>Black at bottom</strong> — useful when you're playing Black and want the board to face you the way it would over the board.</p>
+
+    <h3>Playing a game — modes and difficulty</h3>
+    <p>At the top of the settings area, a segmented control switches between the app's two modes:</p>
+    <ul>
+      <li><strong>Both Sides</strong> — you move both White and Black yourself. The Strategy Panel still offers its full ranked-suggestion and strategic-options analysis for whichever side is currently on move, making this the mode to use for studying a position, replaying a game, or working through "what if I'd played this instead" lines with full coaching on both sides.</li>
+      <li><strong>vs AI</strong> — you play one color against the app's own chess engine. Two more controls appear once this mode is selected:
+        <ul>
+          <li><strong>Difficulty</strong> — Beginner, Casual, or Expert. This changes how deeply and carefully the AI calculates before choosing its move, so it plays a meaningfully weaker or stronger game rather than just pretending to.</li>
+          <li><strong>Play as</strong> — White or Black, choosing which side the AI plays for you against.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Whichever mode you're in, <strong>Undo</strong> steps back the most recent move (or, in vs AI mode, your move and the AI's reply together, so it's always your turn again after undoing), and <strong>Reset</strong> starts a brand-new game from the standard starting position.</p>
+
+    <h3>The Strategy Panel — the heart of the app</h3>
+    <p>This panel, alongside the board, is where the app's real value lives. It updates after every move, for whichever side is currently on move, and it's organized to answer "what should I do right now, and why" before anything else.</p>
+    <p><strong>Whose move it is.</strong> A badge at the top of the panel reads either "Options for White/Black" (when it's your move and the panel below is showing suggestions for you to act on) or "White/Black (AI) to move" (when it's the AI's turn and there's nothing for you to choose yet).</p>
+    <p><strong>Immediate threats.</strong> If the position calls for urgent attention — something is hanging, or a tactic needs to be met right now — a bolt-icon banner flags it before anything else in the panel, so it can't get buried under longer-term strategic notes.</p>
+    <p><strong>About your opponent's last move.</strong> If the move your opponent (or the AI) just played created a real problem worth knowing about — something it exposed or weakened — a warning banner explains it, specifically so you can factor it into your next move rather than as a graded commentary track.</p>
+    <p><strong>Opening name.</strong> Once the game's moves match a recognized opening, its name is shown along with a short note about the idea behind it, for context.</p>
+    <p><strong>What the AI just played, and why.</strong> After the AI makes its move, a short explanation appears once, on your turn, covering the reasoning behind that specific move — so its move doesn't go by unexplained the way a bare move-list would leave it.</p>
+    <p><strong>Suggested moves, ranked.</strong> This is the core of the panel: a ranked list of candidate moves for the position on the board right now, each labeled in algebraic notation with a plain-language reason underneath it (what it accomplishes, what it defends against, what plan it serves). Tap any suggestion to play that move immediately. Suggestions are tagged either <strong>T</strong> (Tactical — a specific, concrete point about this position, like a fork or a hanging piece) or <strong>G</strong> (General — a broader, more positional consideration), shown in a small legend so you always know which kind of reasoning you're looking at. Immediately after a move is played, you may briefly see a "refining suggestions" notice — the panel starts from a fast first pass and then replaces it moments later with a deeper, more carefully calculated ranking, so a suggestion you're about to tap won't unexpectedly reorder itself out from under you without warning.</p>
+    <p><strong>Strategic options.</strong> Below the ranked moves, the panel steps back from the immediate move and addresses the bigger picture:</p>
+    <ul>
+      <li>A single leading callout — either <strong>"Priority right now"</strong> (a tactical concern that needs addressing this move) or <strong>"Main plan"</strong> (a longer-horizon strategic idea worth steering the game toward) — is chosen and shown first, so you always get one clear headline instead of an unranked list of equally-weighted notes.</li>
+      <li>An opening-approach summary, when the game is still early enough for one to be relevant.</li>
+      <li>A live positional assessment, when a real evaluation is available for the position.</li>
+      <li>Further strategic commentary and a fuller list of strategic options, written as plain prose rather than a numbered checklist — these are the longer-horizon ideas (pawn structure plans, piece activity, endgame technique, and so on) that don't need to be acted on this exact move but are worth keeping in mind as the game continues.</li>
+    </ul>
+
+    <h3>Settings</h3>
+    <p>Tap the <strong>Settings</strong> bar (or its chevron) above the board to expand or collapse the settings drawer — collapsing it hides all of the controls below and gives the board more room to grow, useful on smaller screens or when you just want to focus on the position. The drawer holds:</p>
+    <ul>
+      <li><strong>Mode</strong> — Both Sides or vs AI (see "Playing a game," above)</li>
+      <li><strong>Piece set</strong> — Set 1, Set 2, 3D, or Short Set</li>
+      <li><strong>Board style</strong> — Flat or Perspective (3D), shown only for piece sets that support both</li>
+      <li><strong>Board orientation</strong> — White at bottom or Black at bottom</li>
+      <li><strong>Glossary</strong> — opens the glossary reference (below)</li>
+      <li><strong>Move History</strong> — opens the full move-list page (below), disabled until at least one move has been played</li>
+      <li><strong>Set Up Position</strong> — opens the custom position editor (below)</li>
+      <li><strong>Difficulty</strong> and <strong>Play as</strong> — shown only in vs AI mode</li>
+    </ul>
+
+    <h3>Glossary</h3>
+    <p>A searchable reference of chess terms, opened from the Glossary button in Settings. Browse by category, jump straight to a letter using the alphabet strip along the top, or type into the search field to filter by term or definition. This is a standalone reference — it's there for you to look something up on your own terms, separate from the move-specific coaching in the Strategy Panel.</p>
+
+    <h3>Move History</h3>
+    <p>Opens a full, scrollable list of every move played so far, in standard paired White/Black rows with move numbers — the same algebraic notation used throughout the app. A share button lets you copy the list or export it as text (to Messages, Mail, Files, or anywhere else your device offers), useful for saving a game to review later or sharing it with someone else.</p>
+
+    <h3>Set Up Position</h3>
+    <p>Lets you hand-build a position from scratch — placing pieces on whatever squares you want, choosing which side moves first, and setting castling rights — rather than always starting from the standard opening array. Once you tap Start Game, real play begins from exactly the position you built, with full Strategy Panel coaching from that point forward. This is useful for studying a specific position (an endgame you want to practice, a puzzle from a book, a position from a real game you want to pick up mid-stream) without having to replay an entire game to reach it. A custom position doesn't carry over if you close the app mid-game the way a normal game does — only a game started from the standard array autosaves and restores automatically.</p>
+
+    <h3>A note on Export Suggestion Log</h3>
+    <p>There's one more control, meant for anyone who wants to dig deeper into how the app is reasoning about a game: a long press (about one second) on the Settings bar reveals an "Export Suggestion Log" button. It exports a CSV file recording the panel's full output — every ranked suggestion, the leading theme, and any threat warning — for every move of the current game, alongside the move actually played. It's hidden behind the long press so it stays out of the way during ordinary play, but it's always there if you want to review a game's reasoning in detail afterward.</p>
+
+    <hr>
+
+    <!-- ==================== PRIVACY POLICY ==================== -->
+
+    <section id="privacy-policy">
+      <h2>Chess Strategy Trainer — Privacy Policy</h2>
+      <p><strong>Last updated: August 19, 2026</strong></p>
+
+      <div class="note">
+        <p><strong>The short version: this app does not collect, sell, or share any personal information, on any device.</strong> The only thing it stores — the state of your current game — is kept in your own iCloud account so it can follow you between your own iOS and macOS devices, exactly the way a note or reminder you write on one Apple device shows up on your others. There are no accounts with this app itself, no analytics, no advertising, and no trackers of any kind built into it. The rest of this page explains exactly what the app does with data so you don't have to take that on faith.</p>
+      </div>
+
+      <h3>Accounts and personal information</h3>
+      <p>Chess Strategy Trainer doesn't have its own user accounts, sign-in, or profile of any kind. It doesn't ask for your name, email address, location, contacts, photos, camera, microphone, or any other personal information, and it has no way to identify you as an individual. The only account involved is the Apple ID / iCloud account already signed into your device, which Apple — not this app — manages entirely.</p>
+
+      <h3>What's stored, and where</h3>
+      <p>The app keeps a copy of your current game — the moves played so far and a few settings — so that if the app is closed, the device restarts, or you pick up a different device, your game is right where you left it. This data:</p>
+      <ul>
+        <li>is stored using Apple's iCloud key-value storage, tied to your own Apple ID — the same private, per-user iCloud storage many built-in Apple apps use for exactly this kind of syncing</li>
+        <li>syncs automatically between your own iOS and macOS devices, as long as each one is signed into the same iCloud account and has iCloud enabled for this app — it is never visible to the developer, to other users, or to anyone but you</li>
+        <li>is overwritten automatically each time you start a new game, and is removed from iCloud if you delete the app from all of your devices</li>
+      </ul>
+      <p>If a game happens to be updated on two devices before they've had a chance to sync — for instance, the app was open on both at once — the app keeps whichever version was saved most recently and discards the older one, the same way most note-taking or document-syncing apps resolve that situation. There's no merging of two different games into one.</p>
+
+      <h3>Network use</h3>
+      <p>The app makes one kind of outbound network request: while you're considering a move, it may send the current board position — in standard chess notation (FEN), which describes only where the pieces are, not who you are — to Lichess's public cloud-evaluation service, to help suggest strong moves. No account information, device identifiers, or personal data of any kind is attached to that request. If there's no network connection available, or Lichess has no data for that exact position, the app falls back to calculating its own suggestions locally on your device — the core suggestion feature works fine offline.</p>
+
+      <h3>Third parties, advertising, and tracking</h3>
+      <p>The app contains no advertising network, no analytics software development kit, and no tracking software of any kind — nothing that profiles you, links your activity across other apps or websites, or shares data with a data broker or advertiser. Because of that, the app doesn't use Apple's advertising identifier and doesn't show the App Tracking Transparency prompt, since there's no cross-app tracking for it to ask permission for.</p>
+
+      <h3>Children's privacy</h3>
+      <p>Because the app doesn't collect personal information from anyone, it doesn't knowingly collect personal information from children either. The app's content — chess instruction and gameplay — is appropriate for a general audience.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>If this app's data practices ever change further, this page will be updated first, with a new "Last updated" date above, before that change ships in the app.</p>
+
+      <h3>Contact</h3>
+      <p>If you have any questions about this Privacy Policy, you may contact:</p>
+      <p><strong>Michael Stone</strong><br>
+      Email: <a href="mailto:mstone2112@gmail.com">mstone2112@gmail.com</a></p>
+    </section>
+
+  </div>
+</body>
+</html>
