@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Strategy Trainer (Android) — Privacy Policy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+            margin: 0;
+      padding: 40px;
+}
+    .container {
+            max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+    h1, h2, h3 {
+            margin-top: 30px;
+}
+    p, li {
+            font-size: 18px;
+      line-height: 1.6;
+}
+    ul {
+            margin-left: 20px;
+}
+    a {
+            color: #0070f3;
+      text-decoration: none;
+}
+    a:hover {
+            text-decoration: underline;
+}
+    hr {
+            margin: 50px 0;
+      border: none;
+      border-top: 1px solid #ddd;
+        }
+    .note {
+      background: #eef6ff;
+            border-left: 4px solid #0070f3;
+      border-radius: 6px;
+      padding: 20px 24px;
+      margin-top: 20px;
+      }
+    .note p {
+            font-size: 17px;
+      margin: 0 0 12px 0;
+}
+    .note p:last-child {
+            margin-bottom: 0;
+}
+  </style>
+      </head>
+      <body>
+        <div class="container">
+
+          <h1>Chess Strategy Trainer (Android) — Privacy Policy</h1>
+    <p style="color:#888; font-size:15px;">Last updated: September 2, 2026</p>
+
+          <div class="note">
+            <p><strong>The short version: this app never asks for your name, email, or any personal information, and contains no advertising, analytics, or trackers.</strong> To let your current game follow you between your own Android devices, it saves the state of that game — the moves played and a couple of settings — to Google's Firestore database, tied to an anonymous identifier created automatically for this install. That identifier isn't linked to your name, email, Google account, or anything else that identifies you. The rest of this page explains exactly what's stored and why, so you don't have to take that on faith.</p>
+    </div>
+
+    <h2>Accounts and personal information</h2>
+          <p>Chess Strategy Trainer has no sign-in screen, no profile, and no user accounts of its own. It doesn't ask for your name, email address, location, contacts, photos, camera, or microphone, and it has no way to identify you as a person.</p>
+          <p>What it does have, behind the scenes, is <strong>Firebase Anonymous Authentication</strong>: the first time the app runs, it's issued a random, anonymous ID for that installation — not tied to your Google account, email, or any other identity. This happens automatically, with no sign-in prompt. That anonymous ID exists purely so the app can save and later retrieve your own game data, described below.</p>
+
+          <h2>What's stored, and where</h2>
+          <p>The app keeps a copy of your current game — the moves played, whether you're in Analysis or a game against the AI, which color you're playing, and the difficulty setting — so that if you close the app or switch to a different Android device, your game is where you left it. This data:</p>
+          <ul>
+            <li>is stored in Google Firestore (part of Firebase, a Google Cloud service), in a record tied only to the anonymous install ID described above — never to your name, email, or Google account</li>
+      <li>syncs automatically to any other Android device where you're using the app under the same anonymous identity — in the current version, that means devices linked through the same install; the app does not yet offer a sign-in flow to deliberately link multiple separate devices together</li>
+            <li>is overwritten each time you save further progress, and is deleted from Firestore automatically once there's no game in progress worth keeping</li>
+    </ul>
+    <p>Because the anonymous ID is tied to the app install rather than to you personally, uninstalling the app (or clearing its data) ends that identity — a later reinstall gets a new one and won't see the old game. The old record isn't automatically deleted from Firestore when that happens; if you'd like it removed, contact us at the address below and we'll delete it by hand.</p>
+          <p>If the same saved game is updated from two devices before they've had a chance to sync, the app keeps whichever version was saved most recently and discards the older one — there's no merging of two different games into one.</p>
+
+          <h2>Network use</h2>
+          <p>The app makes two kinds of outbound network requests:</p>
+          <ul>
+            <li><strong>Game sync</strong> (described above), to Google's Firebase/Firestore service.</li>
+            <li><strong>Move suggestions</strong>: while you're considering a move, the app may send the current board position — in standard chess notation (FEN), which describes only where the pieces are, not who you are — to Lichess's public cloud-evaluation service, to help suggest strong moves. No account information, device identifiers, or personal data of any kind is attached to that request. If there's no network connection, or Lichess has no data for that exact position, the app falls back to calculating its own suggestions locally on your device — the core suggestion feature works fine offline.</li>
+          </ul>
+
+          <h2>Third parties</h2>
+          <p>Two third-party services are involved, both described above: <strong>Google Firebase</strong> (Anonymous Authentication and Firestore, for cross-device game sync) and <strong>Lichess</strong> (its public cloud-evaluation API, for move suggestions). Neither receives your name, email, or any other personal identifier from this app. The app contains no advertising network, no analytics software development kit, and no tracking software of any kind.</p>
+
+    <h2>Children's privacy</h2>
+    <p>Because the app doesn't collect personal information from anyone, it doesn't knowingly collect personal information from children either. The app's content — chess instruction and gameplay — is appropriate for a general audience.</p>
+
+          <h2>Data deletion</h2>
+          <p>Since there's no account to delete, uninstalling the app stops all data collection going forward. If you'd like your synced game data removed from Firestore specifically (including after uninstalling), email us at the address below with an approximate date you last used the app and we'll locate and delete the record.</p>
+
+          <h2>Changes to this policy</h2>
+    <p>If this app's data practices ever change further, this page will be updated first, with a new "Last updated" date above, before that change ships in the app.</p>
+
+          <h2>Contact</h2>
+          <p>Questions about this policy or how the app handles data are welcome any time at <a href="mailto:mstone2112@gmail.com">mstone2112@gmail.com</a>.</p>
+
+    <hr>
+    <p style="text-align:center; color:#888; font-size:15px;">Chess Strategy Trainer — Android</p>
+
+  </div>
+</body>
+</html>
