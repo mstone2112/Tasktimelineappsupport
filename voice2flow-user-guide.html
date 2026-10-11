@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice2Flow User Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 40px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3, h4 {
+      margin-top: 30px;
+    }
+    p, li {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    hr {
+      margin: 50px 0;
+      border: none;
+      border-top: 1px solid #ddd;
+    }
+    .back {
+      margin: 0 0 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+<h1>Voice2Flow User Guide</h1>
+<p class="back"><a href="https://tasktimeline.org/voice2flow-support.html">← Back to Support</a></p>
+<hr />
+<h2>Voice2Flow — User Guide</h2>
+<p>Voice2Flow is a flow-diagram app you can talk to. Say "Add a decision with Yes and No connectors" and the shape appears, wired up and ready. Say "Rename the selected shape to Review request" and it's renamed. You can build an entire process without touching the canvas — or mix voice, touch, mouse and keyboard however suits the moment.</p>
+<h3>What Makes Voice2Flow Special</h3>
+<p><strong>Try Saying…</strong> — You never have to guess what the app understands. The <strong>Try Saying…</strong> panel on the right lists every phrase the app knows, grouped by what you're doing: Adding Shapes, Editing Shapes, Owners, Connectors, Layout, Swimlanes, Pages &amp; Drill-down, Notes &amp; Links, Group Selection, Item Numbers, and Undo &amp; Redo. Tap any phrase to run it, or read it aloud and say it your own way. In <strong>Cards</strong> view, each pattern shows the blanks you fill in (the shape, the item number, the lane name); in <strong>List</strong> view, you see every example phrase one by one.</p>
+<p><strong>Edit with your voice, not just create</strong> — Voice2Flow isn't only a dictation tool for starting a diagram. You can come back to any diagram and keep editing it by speaking: rename shapes, change their type, set owners, relabel connectors, reverse an arrow, swap two steps, move a shape into another swimlane, align a group, and undo anything you didn't mean.</p>
+<p><strong>Say it once for many shapes</strong> — "Add a 5-step process in swim lane 1." "Make items 1 through 5 divided processes, make items 6 and 10 decision shapes." "Connect shapes 1 through 4." One sentence can build or change a whole row of shapes.</p>
+<p><strong>Every shape has a number</strong> — Shapes are numbered, so you can point at them by voice: "Set the owner of item 3 to Sales," "Move item 3 below item 5," "Drill into item 3."</p>
+<p><strong>Notes and links on any shape</strong> — Attach a note or a web, email or phone link to a shape by speaking or by touch, and optionally include the notes as a numbered list in your PDF.</p>
+<p><strong>Swimlanes, phases, and multi-page diagrams</strong> — Organize a process by team (swimlanes) and by stage (phases), and drill down from any shape into its own sub-process page.</p>
+<p><strong>Templates to start from</strong> — Approval Request, Employee Onboarding, Order Fulfillment, Customer Support Ticket, Incident Response, Decision Flow, and Company Org Chart.</p>
+<p><strong>Works with draw.io and Visio</strong> — Import draw.io and Visio files, and export back out to draw.io XML or Visio, as well as PDF, PNG, and print.</p>
+<p><strong>Your files stay with you</strong> — Diagrams are saved as <code>.v2flow</code> files in the place you choose. No account is needed.</p>
+<hr />
+<h3>Getting Started</h3>
+<h4>The Start Screen</h4>
+<p>When Voice2Flow opens, you can:</p>
+<ul>
+<li><strong>Blank Diagram</strong> — start with an empty page.</li>
+<li><strong>Open…</strong> — open a saved <code>.v2flow</code> file.</li>
+<li><strong>Import a draw.io or Visio file…</strong> — bring in a diagram made in another tool.</li>
+<li><strong>Or start from a template</strong> — begin with an empty swimlane structure or one of the seven templates listed above.</li>
+</ul>
+<h4>Allow the Microphone</h4>
+<p>The first time you use voice, your device asks for permission to use the microphone and speech recognition. Please allow both if you want to speak your commands. If you decline, you can still do everything by touch and typed commands.</p>
+<hr />
+<h3>The Screen at a Glance</h3>
+<p><strong>Top toolbar</strong> — New, Open…, Save, Save As…, and Export. The file name is shown in the middle; an orange dot beside it means there are unsaved changes. <strong>Look: Classic / Glass</strong> changes the app's appearance: tap it to switch, or press and hold for a menu.</p>
+<p><strong>Library (left)</strong> — A drawer of shapes you can place by hand: core flowchart shapes, standard symbols, and an extra collection of 91 shapes including BPMN, UML, and icons.</p>
+<p><strong>Canvas (center)</strong> — Your diagram. Tap a shape to select it; drag to move it; drag its handles to resize it.</p>
+<p><strong>Try Saying… and Tools (right)</strong> — The phrase list described above, with Tools beneath it: Undo, Redo, Copy, Cut, Paste, Delete, and Page guides.</p>
+<p><strong>Command bar (bottom)</strong> — The microphone button, the transcript of what you said (or the result of the last command), a picker for the target shape, and a keyboard button for typing a command instead of speaking.</p>
+<p><strong>Page tabs (very bottom)</strong> — One tab per page ("Page 1", and so on), with a <strong>+</strong> to add another.</p>
+<hr />
+<h3>Speaking Commands</h3>
+<h4>How It Works</h4>
+<ol>
+<li>Tap the <strong>microphone</strong> button in the command bar.</li>
+<li>Speak one command, in plain English. </li>
+<li>The app shows what it heard and what it did. If it didn't understand, it offers <strong>"Did you mean…?"</strong> suggestions you can tap.</li>
+</ol>
+<p>The <strong>Command history</strong> disclosure in the command bar lists what you've said so far in the session.</p>
+<p>Voice recognition is currently in <strong>English (US)</strong>.</p>
+<h4>Typing Instead</h4>
+<p>Tap the <strong>keyboard</strong> button in the command bar to type a command. Typed commands use exactly the same phrases as spoken ones, which makes them useful in a quiet room — or a loud one.</p>
+<h4>Tips for Better Results</h4>
+<ul>
+<li>Use the shape names that appear in the Library: "divided process," "predefined process," "decision," "hexagon."</li>
+<li>Refer to shapes by their <strong>item number</strong> ("item 3," "shape number 7") or select a shape first and say "the selected shape."</li>
+<li>If a command doesn't work, open <strong>Try Saying…</strong> and look for the pattern closest to what you meant.</li>
+<li>Made a mistake? Say <strong>"Undo that."</strong></li>
+</ul>
+<hr />
+<h3>What You Can Say</h3>
+<p>These are examples from the Try Saying… panel. Words in the examples such as "A," "B," "Team A," "Lane 1," or "item 3" are placeholders for your own shapes, names, and numbers.</p>
+<h4>Adding Shapes</h4>
+<ul>
+<li>"Add a process"</li>
+<li>"Add a divided process between A and B"</li>
+<li>"Add a decision as the next step with Yes and No alternatives"</li>
+<li>"Add three divided process shapes"</li>
+<li>"Add a divided process, a decision and another divided process"</li>
+<li>"Create a new 5-step linear process using divided process shapes"</li>
+<li>"Add a cloud shape," "Add a hexagon," "Add a BPMN exclusive gateway," "Add a UML actor," "Add a server icon"</li>
+<li>"Use the approval template" (also: "Start from the order fulfillment template," "Load the incident response template," "Use the onboarding template," "Use the support ticket template," "Use the decision flow template," "Use the org chart template")</li>
+<li>"New step," "Next step," "End process" — to build a process one step at a time</li>
+</ul>
+<h4>Editing Shapes</h4>
+<ul>
+<li>"Set the action to Review and approve this step"</li>
+<li>"Rename the selected shape to Review request"</li>
+<li>"Rename the predefined process to Review request"</li>
+<li>"Change the selected shape to a decision"</li>
+<li>"Make this shape a divided process"</li>
+<li>"Select A"</li>
+<li>"Description is Complete this task"</li>
+<li>"Delete the selected shape"</li>
+<li>"Deselect all shapes"</li>
+</ul>
+<h4>Owners</h4>
+<ul>
+<li>"Set the owner of the selected shape to Team A"</li>
+<li>"Change the owner of A to Team A"</li>
+<li>"Make the owner of the first three Team A and the owner of the remaining two Team B"</li>
+<li>"Rename the owner Team A to Team B"</li>
+</ul>
+<h4>Connectors</h4>
+<ul>
+<li>"Connect A to B"</li>
+<li>"Connect 1 to 2 to 3 to 4"</li>
+<li>"Connect shapes 1 through 4"</li>
+<li>"Connect all the shapes in the Sales lane"</li>
+<li>"Add yes and no connectors to the selected shape"</li>
+<li>"Add a connector with three branches"</li>
+<li>"Make this a dotted connector"</li>
+<li>"Change all connectors to dashed"</li>
+<li>"Label this connector as Maybe"</li>
+<li>"Label the connector from A to B as Yes"</li>
+<li>"Delete the connector between 3 and 4"</li>
+<li>"Reverse the direction of this arrow"</li>
+</ul>
+<p>Connectors keep their routes when you reposition shapes — moving a shape won't suddenly rewire your diagram.</p>
+<h4>Layout</h4>
+<ul>
+<li>"Fit into a grid of 4 columns"</li>
+<li>"Fit to A4," "Fit to letter"</li>
+<li>"Tighten the shapes"</li>
+<li>"Swap items 2 and 3"</li>
+<li>"Move item 3 below item 5"</li>
+<li>"Move item 4 to the left of item 2"</li>
+<li>"Move the selected shape left a little"</li>
+<li>"Move item 3 to lane 2"</li>
+</ul>
+<h4>Swimlanes and Phases</h4>
+<ul>
+<li>"Add a swimlane named Support"</li>
+<li>"Add three vertical swim lanes"</li>
+<li>"Rename Lane 1 to Sales"</li>
+<li>"Add a 5-step process in swim lane 1"</li>
+<li>"Add two decision shapes in the Sales lane"</li>
+<li>"Change all of the owners to match the current lane"</li>
+<li>"Delete the second swimlane" / "Delete all swimlanes"</li>
+<li>"Add phases Plan, Build and Review"</li>
+<li>"Rename phase 2 to Build"</li>
+<li>"Make phase 2 wider"</li>
+<li>"Set the width of phase 2 to 500"</li>
+<li>"Delete phase 2"</li>
+</ul>
+<p>Swimlanes can run horizontally or vertically. Phases divide the diagram into stages.</p>
+<h4>Working With a Group</h4>
+<p>Select several shapes (see <em>Selecting Several Shapes</em> below), then say:</p>
+<ul>
+<li>"Make the owners of the selected shapes Bob"</li>
+<li>"Set the actions of the selected shapes to Review request"</li>
+<li>"Align the selected shapes as two columns"</li>
+<li>"Align the selected shapes vertically"</li>
+<li>"Align the connectors"</li>
+</ul>
+<h4>Item Numbers</h4>
+<ul>
+<li>"Make items 1 through 5 divided processes"</li>
+<li>"Change shape 3 to a divided process"</li>
+<li>"Set the owner of items 1 through 5 to Sales"</li>
+<li>"Set the action of item 3 to be Done"</li>
+</ul>
+<h4>Pages and Drill-down</h4>
+<ul>
+<li>"Add a page called Returns"</li>
+<li>"Go to page 2," "Go to the last page," "Next page," "Previous page"</li>
+<li>"Rename this page to Returns"</li>
+<li>"Delete page 2"</li>
+<li>"Create a sub-process for item 3"</li>
+<li>"Drill into item 3"</li>
+<li>"Go back"</li>
+<li>"Remove the sub-process from item 3"</li>
+</ul>
+<h4>Notes and Links</h4>
+<ul>
+<li>"Add a note to item 3: check with finance"</li>
+<li>"Add a note saying call the vendor"</li>
+<li>"Set the note on item 3 to approved by Dana"</li>
+<li>"Read the note on item 3"</li>
+<li>"Delete the note on item 3"</li>
+<li>"Link item 3 to example.com"</li>
+<li>"Link the selected shape to the clipboard"</li>
+<li>"Open the link on item 3"</li>
+<li>"What is the link on item 3"</li>
+<li>"Remove the link from item 3"</li>
+</ul>
+<h4>Undo and Redo</h4>
+<ul>
+<li>"Undo that"</li>
+<li>"Redo that"</li>
+</ul>
+<hr />
+<h3>Working by Hand</h3>
+<p>Voice is the fastest way to get started, but you're always free to take over.</p>
+<h4>Adding and Moving Shapes</h4>
+<p>Open the <strong>Library</strong> on the left and tap or drag a shape onto the canvas. Drag a shape to move it. Alignment guides appear as you drag to help you line shapes up. Drag the handles around a selected shape to resize it.</p>
+<h4>Selecting Several Shapes</h4>
+<p>On a Mac, drag a rectangle on the canvas. On an iPad or iPhone, press and hold on an empty part of the canvas, then drag to draw the selection box. Everything inside is selected, and the "selected shapes" voice commands apply to it.</p>
+<h4>Copy, Cut, Paste, Delete, Undo, Redo</h4>
+<p>Find all of these under <strong>Tools</strong> on the right.</p>
+<h4>Connectors</h4>
+<p>Connect shapes by voice, or by hand. Connectors can be solid, dashed or dotted, with arrowheads at either or both ends, and can carry a label such as "Yes" or "No."</p>
+<h4>Page Guides</h4>
+<p>Turn on <strong>Page guides</strong> under Tools to see where a printed page will begin and end, so you can arrange your diagram to fit.</p>
+<hr />
+<h3>Notes and Links</h3>
+<p>Each shape can carry a <strong>note</strong> and a <strong>link</strong>.</p>
+<ul>
+<li><strong>Note</strong> — Select a shape. A small note icon appears on it; tap it to type or edit the note. Or just say "Add a note to item 3: check with finance."</li>
+<li><strong>Link</strong> — A web address, an email address, or a phone number. A small link badge appears on shapes that have one; tap it to open the link. Or say "Link item 3 to example.com."</li>
+<li>Notes and links travel with your diagram — in <code>.v2flow</code> files, draw.io files (as a tooltip and link), and Visio files (as Shape Data and a hyperlink).</li>
+<li>In <strong>Export → PDF</strong>, turn on <strong>Include notes</strong> to add a numbered list of your notes after the diagram. Links in the PDF are clickable.</li>
+</ul>
+<hr />
+<h3>Swimlanes, Phases, and Pages</h3>
+<h4>Swimlanes</h4>
+<p>Add swimlanes to show who is responsible for each step — "Add three vertical swim lanes," "Rename Lane 1 to Sales." Shapes can be added directly into a lane by name ("Add two decision shapes in the Sales lane") and moved between lanes ("Move item 3 to lane 2"). Say "Change all of the owners to match the current lane" to make each shape's owner match the lane it sits in.</p>
+<h4>Phases</h4>
+<p>Phases divide the diagram into stages — Plan, Build, Review. You can resize them by voice.</p>
+<h4>Multiple Pages and Sub-processes</h4>
+<p>A diagram can have many pages; use the page tabs at the bottom. For a detailed step, say "Create a sub-process for item 3." The shape gets a small badge — tap it, or say "Drill into item 3," to open the sub-process page, and say "Go back" to return.</p>
+<h4>Org Charts</h4>
+<p>Start from the <strong>Company Org Chart</strong> template, select a person, and say "Add a subordinate" or "Add two subordinates to item 3."</p>
+<hr />
+<h3>Saving, Opening, and Importing</h3>
+<ul>
+<li><strong>Save</strong> and <strong>Save As…</strong> write a <code>.v2flow</code> file to a place you choose.</li>
+<li><strong>Open…</strong> opens a saved <code>.v2flow</code> file (with <strong>Browse…</strong> to find files elsewhere).</li>
+<li><strong>Import draw.io / Visio…</strong> brings in draw.io files and Visio <code>.vsdx</code> and <code>.vstx</code> files, including files with multiple pages. Voice2Flow brings in as much as it can — shapes, text, connectors, and notes.</li>
+</ul>
+<hr />
+<h3>Exporting and Printing</h3>
+<p>Choose <strong>Export</strong> in the top toolbar:</p>
+<ul>
+<li><strong>Print…</strong> — AirPrint on iPhone and iPad; the standard print dialog on Mac.</li>
+<li><strong>PDF…</strong> — A PDF of your diagram, with a preview first. Multi-page diagrams get a heading on each page ("Page 2 of 5"). Choose <strong>Include notes</strong> to add the numbered notes list.</li>
+<li><strong>Image (PNG)…</strong> — A PNG image. Multi-page diagrams export as a zip of images.</li>
+<li><strong>draw.io XML…</strong> — Open in draw.io (diagrams.net); each page becomes a tab.</li>
+<li><strong>Visio (.vsdx)…</strong> — Open in Microsoft Visio; each page becomes a Visio page.</li>
+</ul>
+<p>The export preview lets you choose the paper size and how the diagram is split across pages before you export.</p>
+<hr />
+<h3>Troubleshooting</h3>
+<p><strong>The app doesn't hear me.</strong> Check that microphone and speech recognition are allowed for Voice2Flow in your device's Settings (iPhone and iPad) or System Settings → Privacy &amp; Security (Mac).</p>
+<p><strong>The app heard me but didn't understand.</strong> Look at the <strong>Did you mean…?</strong> suggestions, or find the closest pattern in <strong>Try Saying…</strong>.</p>
+<p><strong>A command did the wrong thing.</strong> Say "Undo that," or tap Undo under Tools.</p>
+<p><strong>Voice recognition is in the wrong language.</strong> Voice2Flow currently recognizes English (US).</p>
+<p><strong>I can't find my file.</strong> Use <strong>Open… → Browse…</strong> to look in the folder where you saved it.</p>
+<hr />
+<h3>Questions and Suggestions</h3>
+<p>I'd love to hear how you use Voice2Flow and what would make it better. Write to me at <a href="mailto:mstone2112@gmail.com">mstone2112@gmail.com</a>.</p>
+<hr />
+<p class="back"><a href="https://tasktimeline.org/voice2flow-support.html">← Back to Support</a></p>
+  </div>
+</body>
+</html>
